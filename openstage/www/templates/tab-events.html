@@ -16,14 +16,14 @@
       on-refresh="doRefresh()">
     </ion-refresher>
     <div class="list" ng-show="showList">
-      <a class="item item-avatar" href="#" ng-repeat="x in events">
-        <time datetime="2014-09-20" class="icon">
+      <a class="item item-avatar" ng-repeat="x in events" href="#/tab/events/{{x.short}}">
+        <time class="icon">
           <strong>{{getMonth(x.day)}}</strong>
           <span>{{getDate(x.day)}}</script></span>
         </time>
         <h2>{{x.name}}</h2>
         <p>{{x.event}}</p>
-        <button class="button button-icon star-btn icon ion-ios-star-outline"></button>
+        <button class="button button-icon star-btn icon ion-ios-star-outline" ng-click="star(x.short)"></button>
       </a>
     </div>
 

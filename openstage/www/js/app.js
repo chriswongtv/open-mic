@@ -1,4 +1,4 @@
-angular.module('openstage', ['ionic', 'openstage.controllers', 'openstage.services', 'ngCordova', 'firebase'])
+angular.module('openstage', ['ionic', 'openstage.controllers', 'openstage.services', 'openstage.utils', 'ngCordova', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -39,6 +39,15 @@ angular.module('openstage', ['ionic', 'openstage.controllers', 'openstage.servic
       'tab-events': {
         templateUrl: 'templates/tab-events.html',
         controller: 'EventsCtrl'
+      }
+    }
+  })
+  .state('tab.event-detail', {
+    url: '/events/:eventName',
+    views: {
+      'tab-events': {
+        templateUrl: 'templates/event-detail.html',
+        controller: 'EventDetailCtrl'
       }
     }
   })

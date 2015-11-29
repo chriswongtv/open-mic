@@ -1,0 +1,20 @@
+<ion-view view-title="Starred">
+  <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="list" ng-show="showList">
+      <a class="item item-avatar" href="#" ng-repeat="x in starredEvents">
+        <time class="icon">
+          <strong>{{getMonth(x.day)}}</strong>
+          <span>{{getDate(x.day)}}</script></span>
+        </time>
+        <h2>{{x.name}}</h2>
+        <p>{{x.event}}</p>
+        <button class="button button-icon star-btn icon ion-ios-star" ng-click="unstar(x.short)"></button>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>
