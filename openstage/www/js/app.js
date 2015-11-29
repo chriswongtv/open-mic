@@ -1,4 +1,4 @@
-angular.module('openstage', ['ionic', 'openstage.controllers', 'openstage.services', 'ngCordova'])
+angular.module('openstage', ['ionic', 'openstage.controllers', 'openstage.services', 'ngCordova', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
